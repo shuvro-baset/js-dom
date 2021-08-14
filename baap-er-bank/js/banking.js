@@ -53,3 +53,23 @@ document.getElementById('withdraw-button').addEventListener('click', function ()
 */
 
 // another way
+// when click on deposit button
+document
+  .getElementById("deposit-button")
+  .addEventListener("click", function () {
+    // update deposit balance
+    let depositAddedAmount = document.getElementById("deposit-input").value;
+    depositAddedAmount = parseFloat(depositAddedAmount);
+    if (depositAddedAmount <= 0) {
+      document.getElementById("deposit-error").innerText =
+        "please insert a valid amount";
+    } else {
+      const previousDepositTotal =
+        document.getElementById("deposit-total").innerText;
+      const newDepositTotal =
+        parseFloat(previousDepositTotal) + depositAddedAmount;
+      document.getElementById("deposit-total").innerText = newDepositTotal;
+      document.getElementById("deposit-error").innerText = "";
+    }
+    document.getElementById("deposit-input").value = "";
+  });
