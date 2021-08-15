@@ -72,4 +72,29 @@ document
       document.getElementById("deposit-error").innerText = "";
     }
     document.getElementById("deposit-input").value = "";
+    // update balance Amount
+    let balanceCurrentAmount =
+      document.getElementById("balance-total").innerText;
+    let balanceTotal = parseFloat(balanceCurrentAmount) + depositAddedAmount;
+    document.getElementById("balance-total").innerText = balanceTotal;
+  });
+// withdraw Amount
+document
+  .getElementById("withdraw-button")
+  .addEventListener("click", function () {
+    let withdrawInput = document.getElementById("withdraw-input").value;
+    console.log("I am clicked", withdrawInput);
+    let withdrawCurrentAmount = parseFloat(
+      document.getElementById("withdraw-total").innerText
+    );
+    document.getElementById("withdraw-input").value = "";
+    const newWithdrawTotal =
+      parseFloat(withdrawCurrentAmount) + parseFloat(withdrawInput);
+    document.getElementById("withdraw-total").innerText = newWithdrawTotal;
+    // reduce balance
+    let balanceCurrentAmount =
+      document.getElementById("balance-total").innerText;
+    let balanceTotal =
+      parseFloat(balanceCurrentAmount) - parseFloat(withdrawInput);
+    document.getElementById("balance-total").innerText = balanceTotal;
   });
