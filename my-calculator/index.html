@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form class="calculator" name="calc">
+            <input type="text" readonly class="value" name='text'>
+            <span class='num clear' onclick="calc.text.value =''">c</span>
+            <span class="num" onclick="document.calc.text.value+='/'">/</span>
+            <span class="num" onclick="document.calc.text.value+='*'">*</span>
+            <span class="num" onclick="document.calc.text.value+='7'">7</span>
+            <span class="num" onclick="document.calc.text.value+='8'">8</span>
+            <span class="num" onclick="document.calc.text.value+='9'">9</span>
+            <span class="num" onclick="document.calc.text.value+='-'">-</span>
+            <span class="num" onclick="document.calc.text.value+='4'">4</span>
+            <span class="num" onclick="document.calc.text.value+='5'">5</span>
+            <span class="num" onclick="document.calc.text.value+='6'">6</span>
+            <span class="num plus" onclick="document.calc.text.value+='+'">+</span>
+            <span class="num" onclick="document.calc.text.value+='1'">1</span>
+            <span class="num" onclick="document.calc.text.value+='2'">2</span>
+            <span class="num" onclick="document.calc.text.value+='3'">3</span>
+            <span class="num" onclick="document.calc.text.value+='0'">0</span>
+            <span class="num" onclick="document.calc.text.value+='00'">00</span>
+            <span class="num" onclick="document.calc.text.value+='.'">.</span>
+            <span class="num equal" onclick="document.calc.text.value = eval(calc.text.value)">=</span>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector(".container"), {
+            max: 15,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.2
+        });
+
+    </script>
+</body>
+</html>
