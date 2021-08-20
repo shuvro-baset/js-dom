@@ -1,3 +1,4 @@
+/*
 function myBank(inputId, updateAmount){
     let input = parseFloat(document.getElementById(inputId).value);
     if(input>0){
@@ -19,3 +20,4 @@ document.getElementById('deposit-button').addEventListener('click', function(){
 document.getElementById('withdraw-button').addEventListener('click', function(){
     const withdraw = myBank('withdraw-input', 'withdraw-total');
 })
+*/
